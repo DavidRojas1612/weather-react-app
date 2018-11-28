@@ -1,0 +1,27 @@
+$max-width: 1024px;
+$small: 320px;
+$medium: 640px;
+$large: 1024px;
+
+$easing: cubic-bezier(0.54, 0.11, 0.24, 1.3);
+$transform-time: 0.3s;
+
+$colors: (
+  primary: #1484DE,
+  secondary: #ffd615,
+  terciary: #f9ff21,
+  font-color: #53575a,
+  border-color: #dfe0e0,
+  black: #141618,
+  white: #ffffff,
+  green: #30c352,
+  red: #ff6279,
+);
+
+@function color($color) {
+  @if map-has-key($map: $colors, $key: $color) {
+    @return map-get($map: $colors, $key: $color);
+  }
+  @warn "Unknown `#{$color}` in $colors.";
+  @return null;
+}

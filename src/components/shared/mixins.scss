@@ -1,0 +1,11 @@
+@mixin from($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin backgroundHover($property) {
+  &:hover {
+    background-color: darken($property, 10);
+  }
+}

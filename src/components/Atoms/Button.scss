@@ -1,0 +1,42 @@
+@import '../shared/typography.scss';
+@import '../shared/variables.scss';
+@import '../shared/mixins.scss';
+
+.button {
+  border: none;
+  background-color: color(primary);
+  color: color(white);
+  font-family: $font;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color $transform-time $easing;
+  border-radius: 3px;
+  text-shadow: 0 0.5px 1px color(black);
+  text-transform: uppercase;
+
+  @include backgroundHover(color(primary));
+
+  &--primary {
+    background: color(primary);
+    @include backgroundHover(color(primary));
+  }
+
+  &--secondary {
+    background: color(secondary);
+    @include backgroundHover(color(secondary));
+  }
+
+  &--terciary {
+    background: color(terciary);
+    @include backgroundHover(color(terciary));
+  }
+
+  &--like {
+    background: transparent;
+    width: 16px;
+    padding: 0;
+    @include backgroundHover(transparent);
+  }
+}

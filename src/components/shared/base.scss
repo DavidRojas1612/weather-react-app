@@ -1,0 +1,50 @@
+@import './variables.scss';
+@import './typography.scss';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+  color: color(font-color);
+  line-height: 1.6;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  max-width: 100%;
+}
+
+.l-container {
+  max-width: $max-width;
+  margin: 0 auto;
+}

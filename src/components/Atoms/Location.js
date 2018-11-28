@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Location.scss'
 const Location = ({city}) => (
-  <div>
+  <header>
     <h1>
       {city}
     </h1>
-  </div>
+  </header>
 )
 
 Location.propTypes = {

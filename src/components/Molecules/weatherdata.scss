@@ -1,11 +1,10 @@
 .weatherDataContent{
-    width: 90%;
     height: 200px;
     display: flex;
     color: #e7791f;
     background-color: #ddd;
     margin: 0 auto;
-    border-radius: 1rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     .weatherContent{
         flex-basis: 0;
         flex-grow: 1;
