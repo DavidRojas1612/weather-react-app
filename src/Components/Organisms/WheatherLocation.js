@@ -3,7 +3,7 @@ import WeatherData from '../Molecules/WeatherData'
 import Location from '../Atoms/Location'
 const WeaterLocation = () => (
   <div>
-    <Location />
+    <Location city='Barcelona' />
     <WeatherData />
   </div>
 )

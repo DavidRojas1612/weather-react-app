@@ -1,11 +1,15 @@
 import React from 'react'
-
-const Location = () => (
+import PropTypes from 'prop-types'
+import './Location.scss'
+const Location = ({city}) => (
   <div>
     <h1>
-      Santiago Cali
+      {city}
     </h1>
   </div>
 )
 
+Location.propTypes = {
+  city: PropTypes.string.isRequired
+}
 export default Location
