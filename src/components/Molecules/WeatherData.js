@@ -1,5 +1,5 @@
 import React from 'react'
-import WeatherTemperature from '../Atoms/WatherTemperature'
+import WeatherTemperature from '../Atoms/WeatherTemperature'
 import WeatherExtraInfo from '../Atoms/WeatherExtraInfo'
 import './weatherdata.scss'
 import PropTypes from 'prop-types'

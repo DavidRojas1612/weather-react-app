@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import WeaterLocation from './components/Organisms/WheatherLocation'
+import LocationList from './components/Organisms/LocationList';
 import './App.css'
 
 class App extends Component {
   render () {
     return (
       <div className='App'>
-        <WeaterLocation />
+        <LocationList />
       </div>
     )
   }

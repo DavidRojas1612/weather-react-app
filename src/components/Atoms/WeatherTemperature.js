@@ -5,18 +5,18 @@ import './watherTemperature.scss'
 import {
   CLOUD,
   RAIN,
-  CLOUDY,
   SNOW,
   SUN,
-  WINDY
+  THUNDER,
+  DRIZZLE
 } from '../../constants/weathers'
 const icons = {
   [CLOUD]: 'cloud',
   [RAIN]: 'rain',
-  [CLOUDY]: 'cloudy',
   [SNOW]: 'snow',
-  [SUN]: 'sun',
-  [WINDY]: 'windy'
+  [SUN]: 'day-sunny',
+  [THUNDER]:'day-thunderstore',
+  [DRIZZLE]:'showers',
 }
 
 const getWeatherIcon = (weatherState) => {

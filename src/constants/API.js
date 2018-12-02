@@ -1,6 +1,5 @@
-const LOCATION = 'Buenos Aires,ar'
-const API_KEY = 'b6907d289e10d714a6e88b30761fae22'
-const url = 'https://openweathermap.org/data/2.5/weather'
-const apiWeather = `${url}?q=${LOCATION}&appid=${API_KEY}`
+export const API_KEY = 'f09ddcbac0f9a62e5e1c5f0e72864cc0'
+export const url = 'https://api.openweathermap.org/data/2.5/'
 
-export default apiWeather
+
+
