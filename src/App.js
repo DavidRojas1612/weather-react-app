@@ -14,11 +14,13 @@ class App extends Component {
       city
     })
   }
-  onHandleResetState(){
+
+  onHandleResetState = () =>{
     this.setState({
       city:null
     })
   }
+  
   render () {
     const {city} = this.state
     return (
@@ -26,7 +28,7 @@ class App extends Component {
        {
          !city ? <LocationList onSelectedLocation={this.handleSelectedLocation}/>
          
-         :<ForecastExtended city={this.state.city} handleBackpage={()=>this.onHandleResetState()} />
+         :<ForecastExtended city={this.state.city} handleBackpage={this.onHandleResetState} />
 
        }
       </div>

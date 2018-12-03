@@ -3,12 +3,17 @@ import Button from '../Atoms/Button'
 import PropTypes from 'prop-types'
 
 class ForecastExtended extends Component {
+
+  onHandleBackPage = () =>{
+    this.props.handleBackpage()
+  }
   render () {
-    const {city, handleBackpage} = this.props
+    const { city } = this.props
+
     return (
       <div>
-        <Button onClick={handleBackpage}>
-            atrás
+        <Button onClick={()=>this.onHandleBackPage()}>
+          atrás
         </Button>
         {city}
       </div>
