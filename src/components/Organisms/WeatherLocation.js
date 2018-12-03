@@ -6,10 +6,10 @@ import Loader from '../Atoms/Loader'
 import transfromData from '../../providers/trasnformWeather'
 import {PropTypes} from 'prop-types'
 
-const WeatherLocation = ({city:{name,...data}}) => { 
+const WeatherLocation = ({onWeatherLocationClick,city:{name,...data}}) => { 
   let dataParse = transfromData(data)
   return (
-    <article className='weatherArticle'>
+    <article className='weatherArticle' onClick={onWeatherLocationClick}>
         {
         data ?
           <Fragment>
@@ -24,6 +24,7 @@ const WeatherLocation = ({city:{name,...data}}) => {
   
 WeatherLocation.propTypes = {
   city: PropTypes.object.isRequired,
+  onWeatherLocationClick: PropTypes.func,
 }
 
 export default WeatherLocation

@@ -3,6 +3,7 @@ import "./LocationList.scss";
 import WeatherLocation from "./WeatherLocation";
 import { getUrlWeatherByCity } from "../../providers/getUrlWeatherByCity";
 import Loader from "../Atoms/Loader";
+import PropTypes from "prop-types"
 
 const cities = [3688689, 3674962, 3687925, 6542283, 6539761, 4379545];
 
@@ -27,8 +28,18 @@ class LocationList extends Component {
       .catch(e => console.log(e));
   };
 
+  handleWeatherLocationClick = city =>{
+    console.log("hanldeWatherlocationClick")
+    this.props.onSelectedLocation(city)
+  }
+
   getWeatherCities = data => {
-    return data.map(city => <WeatherLocation key={city.id} city={city} />);
+    return data.map(city => 
+      <WeatherLocation 
+        onWeatherLocationClick={()=> this.handleWeatherLocationClick(city.name)} 
+        key={city.id} 
+        city={city} 
+      />);
   };
 
   componentDidMount() {
@@ -45,5 +56,7 @@ class LocationList extends Component {
     );
   }
 }
-
+Location.propTypes = {
+  onSelectedLocation: PropTypes.func,
+}
 export default LocationList;
