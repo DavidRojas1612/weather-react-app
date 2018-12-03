@@ -49,7 +49,7 @@ class LocationList extends Component {
   render() {
     const { data, loading } = this.state;
     return (
-      <div>
+      <div className="ListContainer">
         {data && this.getWeatherCities(data)}
         {loading && <Loader />}
       </div>

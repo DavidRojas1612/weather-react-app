@@ -1,0 +1,9 @@
+@import '../shared/variables.scss';
+@import '../shared/mixins.scss';
+
+
+.ListContainer{
+    height: 100vh;
+    overflow: auto;
+    max-width: $medium;
+}
