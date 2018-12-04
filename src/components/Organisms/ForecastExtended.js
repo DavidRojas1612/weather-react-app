@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import ForecastItem from '../Molecules/ForecastItem';
 import { getUrlForecastByCity } from '../../providers/getUrlWeatherByCity';
 import Loader from '../Atoms/Loader';
-
+import trasformForecast from '../../providers/trasformForecast';
 
 class ForecastExtended extends Component {
 state = {
@@ -24,10 +24,12 @@ state = {
       })
       .then(data => {
         console.log(data)
-        this.setState({
-          data,
-          loading: false
-        });
+        const forecastData = trasformForecast(data)
+        console.log(forecastData)
+        // this.setState({
+        //   data: forecastData,
+        //   loading: false
+        // });
       })
       .catch(e => console.log(e));
   };
