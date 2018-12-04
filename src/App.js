@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import LocationList from './components/Organisms/LocationList';
 import './App.scss'
-import ForecastExtended from './components/Molecules/ForecastExtended';
+import ForecastExtended from './components/Organisms/ForecastExtended';
 
 class App extends Component {
   state = {
@@ -9,7 +9,6 @@ class App extends Component {
   }
 
   handleSelectedLocation = city =>{
-    console.log("handleSelectedLocation", city);
     this.setState({
       city
     })

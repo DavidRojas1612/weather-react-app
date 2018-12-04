@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from '../Atoms/Button'
 import PropTypes from 'prop-types'
+import ForecasItem from '../Molecules/ForecasItem';
 
 class ForecastExtended extends Component {
 
@@ -16,6 +17,7 @@ class ForecastExtended extends Component {
           atrás
         </Button>
         {city}
+        <ForecasItem />
       </div>
     )
   }
