@@ -1,30 +1,65 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Button from '../Atoms/Button'
 import PropTypes from 'prop-types'
-import ForecasItem from '../Molecules/ForecasItem';
+import ForecastItem from '../Molecules/ForecastItem';
+import { getUrlForecastByCity } from '../../providers/getUrlWeatherByCity';
+import Loader from '../Atoms/Loader';
+
 
 class ForecastExtended extends Component {
-
+state = {
+  data:null,
+  loading:true
+}
   onHandleBackPage = () =>{
     this.props.handleBackpage()
   }
-  render () {
-    const { city } = this.props
 
+  handleGetCity = () => {
+    const { city } = this.props 
+    const apiUrl = getUrlForecastByCity(city);
+    fetch(apiUrl)
+      .then(resolve => {
+        return resolve.json();
+      })
+      .then(data => {
+        console.log(data)
+        this.setState({
+          data,
+          loading: false
+        });
+      })
+      .catch(e => console.log(e));
+  };
+      
+  componentDidMount() {
+    this.handleGetCity();
+  }
+
+  render () {
+    const {data, loading} = this.state
+    const { city } = this.props
     return (
       <div>
-        <Button onClick={()=>this.onHandleBackPage()}>
-          atrás
-        </Button>
-        {city}
-        <ForecasItem />
+        {
+          data && (
+            <Fragment>
+              <Button onClick={()=>this.onHandleBackPage()}>
+                atrás
+              </Button>
+              {city}
+              <ForecastItem />
+            </Fragment>
+          )
+        }
+        {loading && <Loader />}
       </div>
     )
   }
 }
 
 ForecastExtended.propTypes = {
-  city: PropTypes.string.isRequired
+  city: PropTypes.number.isRequired
 }
 
 export default ForecastExtended

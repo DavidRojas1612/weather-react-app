@@ -1,38 +1,11 @@
-import React, { Component } from 'react'
-import LocationList from './components/Organisms/LocationList';
+import React from 'react'
 import './App.scss'
-import ForecastExtended from './components/Organisms/ForecastExtended';
+import Dashboard from './components/Templates/Dashboard'
 
-class App extends Component {
-  state = {
-    city:null
-  }
-
-  handleSelectedLocation = city =>{
-    this.setState({
-      city
-    })
-  }
-
-  onHandleResetState = () =>{
-    this.setState({
-      city:null
-    })
-  }
-  
-  render () {
-    const {city} = this.state
-    return (
-      <div className='App'>
-       {
-         !city ? <LocationList onSelectedLocation={this.handleSelectedLocation}/>
-         
-         :<ForecastExtended city={this.state.city} handleBackpage={this.onHandleResetState} />
-
-       }
-      </div>
-    )
-  }
-}
+const App = () => (
+  <div className='App'>
+    <Dashboard />
+  </div>
+)
 
 export default App

@@ -1,62 +1,32 @@
-import React, { Component } from "react";
-import "./LocationList.scss";
-import WeatherLocation from "./WeatherLocation";
-import { getUrlWeatherByCity } from "../../providers/getUrlWeatherByCity";
-import Loader from "../Atoms/Loader";
-import PropTypes from "prop-types"
+import React from 'react'
+import './LocationList.scss'
+import WeatherLocation from './WeatherLocation'
+import PropTypes from 'prop-types'
 
-const cities = [3688689, 3674962, 3687925, 6542283, 6539761, 4379545];
-
-class LocationList extends Component {
-  state = {
-    data: null,
-    loading: true
-  };
-
-  handleUpdateData = () => {
-    const apiUrl = getUrlWeatherByCity(cities);
-    fetch(apiUrl)
-      .then(resolve => {
-        return resolve.json();
-      })
-      .then(data => {
-        this.setState({
-          data: data.list,
-          loading: false
-        });
-      })
-      .catch(e => console.log(e));
-  };
-
-  handleWeatherLocationClick = city =>{
-    console.log("hanldeWatherlocationClick")
-    this.props.onSelectedLocation(city)
+const LocationList = ({data, onSelectedLocation}) => {
+  const handleWeatherLocationClick = city => {
+    onSelectedLocation(city)
   }
 
-  getWeatherCities = data => {
-    return data.map(city => 
-      <WeatherLocation 
-        onWeatherLocationClick={()=> this.handleWeatherLocationClick(city.name)} 
-        key={city.id} 
-        city={city} 
-      />);
-  };
-
-  componentDidMount() {
-    this.handleUpdateData();
+  const getWeatherCities = data => {
+    return data.map(city =>
+      <WeatherLocation
+        onWeatherLocationClick={() => handleWeatherLocationClick(city.id)}
+        key={city.id}
+        city={city}
+      />
+    )
   }
 
-  render() {
-    const { data, loading } = this.state;
-    return (
-      <div className="ListContainer">
-        {data && this.getWeatherCities(data)}
-        {loading && <Loader />}
-      </div>
-    );
-  }
+  return (
+    <div className='ListContainer'>
+      {data && getWeatherCities(data)}
+    </div>
+  )
 }
-Location.propTypes = {
-  onSelectedLocation: PropTypes.func,
+
+LocationList.propTypes = {
+  onSelectedLocation: PropTypes.func
 }
-export default LocationList;
+
+export default LocationList
