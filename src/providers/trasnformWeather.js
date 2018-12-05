@@ -1,14 +1,7 @@
-import {
-  CLOUD,
-  SUN,
-  DRIZZLE,
-  RAIN,
-  THUNDER,
-  SNOW
-} from '../constants/weathers'
+import { CLOUD, SUN, DRIZZLE, RAIN, THUNDER, SNOW } from '../constants/weathers'
 
 const getWeatherState = weather => {
-  const {id} = weather
+  const { id } = weather
   if (id < 300) return THUNDER
   if (id < 500) return DRIZZLE
   if (id < 600) return RAIN
@@ -18,10 +11,10 @@ const getWeatherState = weather => {
 }
 
 const transfromData = weatherData => {
-  const {humidity, temp} = weatherData.main
+  const { humidity, temp } = weatherData.main
   const { speed } = weatherData.wind
   const weatherState = getWeatherState(weatherData.weather[0])
-  const temperature = parseInt(temp - 273.15) 
+  const temperature = parseInt(temp - 273.15)
   return {
     humidity,
     temperature,

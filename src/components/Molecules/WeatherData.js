@@ -5,11 +5,17 @@ import './weatherdata.scss'
 import Location from '../Atoms/Location'
 import PropTypes from 'prop-types'
 
-const WeatherData = ({city, data: {temperature, humidity, weatherState, wind}}) => (
-  <div className="weather-data__content">
-    <div className="weather-data__info">
-      <Location city={city}/>
-      <WeatherTemperature temperature={temperature} weatherState={weatherState} />
+const WeatherData = ({
+  city,
+  data: { temperature, humidity, weatherState, wind }
+}) => (
+  <div className='weather-data__content'>
+    <div className='weather-data__info'>
+      <Location city={city} />
+      <WeatherTemperature
+        temperature={temperature}
+        weatherState={weatherState}
+      />
     </div>
     <WeatherExtraInfo humidity={humidity} wind={wind} />
   </div>

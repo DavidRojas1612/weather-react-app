@@ -1,21 +1,22 @@
-@import '../shared/variables.scss';
-@import '../shared/mixins.scss';
+@import "../shared/variables.scss";
+@import "../shared/mixins.scss";
 
-.weather{ 
-    &-data{
-        &__info{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        &__content{
-            padding: 1rem;
-            width: 90%;
-            margin: 10px auto;
-            background-color: color(body-bg);
-            border: .5px solid color(border-color);
-        }
+.weather {
+  &-data {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    
+
+    &__content {
+      padding: 1rem;
+      width: 90%;
+      margin: 10px auto;
+      background-color: color(body-bg);
+      border: 0.5px solid color(border-color);
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px color(border-color);
+    }
+  }
 }

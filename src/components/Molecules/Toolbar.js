@@ -1,29 +1,32 @@
-import React, { Fragment } from "react";
-import "./Toolbar.scss";
-import Button from "../Atoms/Button";
+import React, { Fragment } from 'react'
+import './Toolbar.scss'
+import Button from '../Atoms/Button'
 
 const Toolbar = ({ city, handleBackpage }) => {
   const onHandleBackPage = () => {
-    handleBackpage();
-  };
+    handleBackpage()
+  }
+
   return (
-    <nav className="nav">
-      <ul className="menu">
+    <nav className='nav'>
+      <ul className='menu'>
         {city && (
           <Fragment>
-            <li className="menu__item">
-              <Button onClick={() => onHandleBackPage()}>Atrás</Button>
+            <li className='menu__item'>
+              <Button theme='button--like' onClick={() => onHandleBackPage()}>
+                Atrás
+              </Button>
             </li>
-            <li className="menu__item">
-                <h1>{city}</h1>
+            <li className='menu__item'>
+              <h1 className='menu__title'>{city}</h1>
             </li>
           </Fragment>
         )}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-Toolbar.propTypes = {};
+Toolbar.propTypes = {}
 
-export default Toolbar;
+export default Toolbar

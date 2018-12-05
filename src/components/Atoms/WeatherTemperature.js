@@ -15,22 +15,23 @@ const icons = {
   [RAIN]: 'rain',
   [SNOW]: 'snow',
   [SUN]: 'day-sunny',
-  [THUNDER]:'day-thunderstore',
-  [DRIZZLE]:'showers',
+  [THUNDER]: 'day-thunderstore',
+  [DRIZZLE]: 'showers'
 }
 
-const getWeatherIcon = (weatherState) => {
+const getWeatherIcon = weatherState => {
   const icon = icons[weatherState]
   const sizeIcon = '2x'
-  if (icon) return <WeatherIcons className='wicon' name={icon} size={sizeIcon} />
-  else return <WeatherIcons className='wicon' name={'day-sunny'} size={sizeIcon} />
+  if (icon) {
+    return <WeatherIcons className='wicon' name={icon} size={sizeIcon} />
+  } else {
+    return <WeatherIcons className='wicon' name={'day-sunny'} size={sizeIcon} />
+  }
 }
 
-const WeatherTemperature = ({temperature, weatherState}) => (
+const WeatherTemperature = ({ temperature, weatherState }) => (
   <div className='temperatue-content'>
-    {
-      getWeatherIcon(weatherState)
-    }
+    {getWeatherIcon(weatherState)}
     <span className='temperature'>{temperature}</span>
     <span className='temperature-type'>°C</span>
   </div>

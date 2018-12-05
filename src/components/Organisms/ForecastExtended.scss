@@ -1,11 +1,10 @@
-@import '../shared/variables.scss';
-@import '../shared/mixins.scss';
+@import "../shared/variables.scss";
+@import "../shared/mixins.scss";
 
-
-.ForecastContent{
-    height: 100vh;
-    overflow: auto;
-    max-width: $medium;
-    background-color: #f7f7f7;
-    padding-top: 40px;
+.ForecastContent {
+  height: 100vh;
+  overflow: auto;
+  max-width: $medium;
+  background-color: #f7f7f7;
+  padding-top: 50px;
 }

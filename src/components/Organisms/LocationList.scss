@@ -1,11 +1,9 @@
-@import '../shared/variables.scss';
-@import '../shared/mixins.scss';
+@import "../shared/variables.scss";
+@import "../shared/mixins.scss";
 
-
-.ListContainer{
-    height: 100vh;
-    overflow: auto;
-    max-width: $medium;
-    background-color: #f7f7f7;
-    padding-top: 40px;
+.ListContainer {
+  height: 100vh;
+  overflow: auto;
+  max-width: $medium;
+  background-color: #f7f7f7;
 }

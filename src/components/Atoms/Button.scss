@@ -1,6 +1,6 @@
-@import '../shared/typography.scss';
-@import '../shared/variables.scss';
-@import '../shared/mixins.scss';
+@import "../shared/typography.scss";
+@import "../shared/variables.scss";
+@import "../shared/mixins.scss";
 
 .button {
   border: none;
@@ -35,7 +35,6 @@
 
   &--like {
     background: transparent;
-    width: 16px;
     padding: 0;
     @include backgroundHover(transparent);
   }
