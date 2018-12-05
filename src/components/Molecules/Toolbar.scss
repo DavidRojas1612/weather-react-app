@@ -7,7 +7,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: #1484de;
+  background-color: color(primary);
 
   .menu {
     display: flex;
@@ -29,21 +29,6 @@
       align-items: center;
       height: 24px;
       color: color(white);
-    }
-
-    &__link {
-      font-size: 15px;
-      color: color(font-color);
-      height: 50px;
-      display: flex;
-      align-items: center;
-      padding: 0 12px;
-      position: relative;
-
-      &--active {
-        color: color(primary);
-        border-bottom: 3px solid color(primary);
-      }
     }
   }
 }

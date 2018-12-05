@@ -44,7 +44,7 @@ class Dashboard extends Component {
       .catch(e => console.log(e))
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     this.handleUpdateData()
   }
 

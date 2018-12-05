@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './weatherExtraInfo.scss'
+
 const WeatherExtraInfo = ({humidity, wind}) => (
   <div className='weatherContent'>
     <span className='extraInfo'>{`Humedad: ${humidity}% - `}</span>

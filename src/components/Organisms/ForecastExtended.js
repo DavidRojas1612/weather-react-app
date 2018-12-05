@@ -35,11 +35,11 @@ class ForecastExtended extends Component {
     ))
   }
 
-  componentDidMount () {
+  componentDidMount = () => {
     this.handleGetCity()
   }
 
-  render () {
+  render() {
     const { data, loading } = this.state
     return (
       <div className='ForecastContent'>

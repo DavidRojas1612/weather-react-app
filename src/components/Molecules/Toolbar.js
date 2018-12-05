@@ -3,17 +3,13 @@ import './Toolbar.scss'
 import Button from '../Atoms/Button'
 
 const Toolbar = ({ city, handleBackpage }) => {
-  const onHandleBackPage = () => {
-    handleBackpage()
-  }
-
   return (
     <nav className='nav'>
       <ul className='menu'>
         {city && (
           <Fragment>
             <li className='menu__item'>
-              <Button theme='button--like' onClick={() => onHandleBackPage()}>
+              <Button theme='button--like' onClick={() => handleBackpage()}>
                 Atrás
               </Button>
             </li>
