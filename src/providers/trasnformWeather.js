@@ -21,9 +21,10 @@ const transfromData = weatherData => {
   const {humidity, temp} = weatherData.main
   const { speed } = weatherData.wind
   const weatherState = getWeatherState(weatherData.weather[0])
+  const temperature = parseInt(temp - 273.15) 
   return {
     humidity,
-    temperature: temp,
+    temperature,
     weatherState,
     wind: speed
   }

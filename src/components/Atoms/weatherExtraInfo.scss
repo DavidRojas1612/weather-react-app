@@ -1,8 +1,7 @@
+@import '../shared/variables.scss';
+@import '../shared/mixins.scss';
+
 .extraInfo{
-    display: block;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 10px;
     font-size: 20px;
-    color: #154079
+    color: color(font-color);
 }

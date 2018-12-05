@@ -11,7 +11,7 @@ const LocationList = ({data, onSelectedLocation}) => {
   const getWeatherCities = data => {
     return data.map(city =>
       <WeatherLocation
-        onWeatherLocationClick={() => handleWeatherLocationClick(city.id)}
+        onWeatherLocationClick={() => handleWeatherLocationClick(city)}
         key={city.id}
         city={city}
       />

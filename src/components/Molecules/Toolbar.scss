@@ -1,0 +1,49 @@
+
+@import '../shared/typography.scss';
+@import '../shared/variables.scss';
+@import '../shared/mixins.scss';
+
+.nav {
+    .menu {
+        display: flex;
+        height: 40px;
+        background-color: #1484DE;
+        position: fixed;
+        width: 100%;
+        top: 0;
+  
+      &__item {
+        display: flex;
+        align-items: center;
+        height: 24px;
+
+        &:first-child{
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        &:last-child{
+          width: 100%;
+          color: color(white);
+          justify-content: space-around;
+          margin: auto 0;
+        }
+      }
+  
+      &__link {
+        font-size: 15px;
+        color: color(font-color);
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        position: relative;
+  
+        &--active {
+          color: color(primary);
+          border-bottom: 3px solid color(primary);
+        }
+      }
+    }
+  }

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import WeatherData from '../Molecules/WeatherData'
-import Location from '../Atoms/Location'
 import './weatherlocations.scss'
 import Loader from '../Atoms/Loader'
 import transfromData from '../../providers/trasnformWeather'
@@ -13,8 +12,7 @@ const WeatherLocation = ({ onWeatherLocationClick, city: { name, ...data } }) =>
       {
         data ?
           <Fragment>
-            <Location city={name} />
-            <WeatherData data={dataParse} />
+            <WeatherData city={`${name}, ${data.sys.country}`} data={dataParse} />
           </Fragment> :
           <Loader />
       }

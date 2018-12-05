@@ -1,11 +1,11 @@
-.temperature{
-    font-size: 25px;
-    font-weight: bold;
-    color:  #444;
+@import '../shared/variables.scss';
+@import '../shared/mixins.scss';
 
-    &-type{
+.temperature{
+    font-size: 40px;
+   &,&-type{
         font-weight: bold;
-        color:  #444;
+        color: color(font-color);
     }
 }
 

@@ -1,57 +1,54 @@
 import React, { Component, Fragment } from 'react'
-import Button from '../Atoms/Button'
 import PropTypes from 'prop-types'
-import ForecastItem from '../Molecules/ForecastItem';
+import WeatherData from '../Molecules/WeatherData';
 import { getUrlForecastByCity } from '../../providers/getUrlWeatherByCity';
 import Loader from '../Atoms/Loader';
 import trasformForecast from '../../providers/trasformForecast';
-
+import './ForecastExtended.scss'
 class ForecastExtended extends Component {
 state = {
   data:null,
   loading:true
 }
-  onHandleBackPage = () =>{
-    this.props.handleBackpage()
-  }
 
   handleGetCity = () => {
     const { city } = this.props 
-    const apiUrl = getUrlForecastByCity(city);
+    const apiUrl = getUrlForecastByCity(city.id);
     fetch(apiUrl)
       .then(resolve => {
         return resolve.json();
       })
       .then(data => {
-        console.log(data)
         const forecastData = trasformForecast(data)
-        console.log(forecastData)
-        // this.setState({
-        //   data: forecastData,
-        //   loading: false
-        // });
+        this.setState({
+          data: forecastData,
+          loading: false
+        });
       })
       .catch(e => console.log(e));
   };
+
+  renderForecastDays = (data) =>{
+    return data.map( ({id,weekDay, hour,data}) => (
+      <WeatherData key={id} city={`${weekDay}, ${hour} hs`} data={data}/>
+    ))
+  }
       
   componentDidMount() {
     this.handleGetCity();
   }
 
   render () {
-    const {data, loading} = this.state
-    const { city } = this.props
+    const {data, loading } = this.state
     return (
-      <div>
+      <div className="ForecastContent">
         {
           data && (
             <Fragment>
-              <Button onClick={()=>this.onHandleBackPage()}>
-                atrás
-              </Button>
-              {city}
-              <ForecastItem />
-            </Fragment>
+              {
+                this.renderForecastDays(data)
+              }
+            </Fragment >
           )
         }
         {loading && <Loader />}
@@ -61,7 +58,7 @@ state = {
 }
 
 ForecastExtended.propTypes = {
-  city: PropTypes.number.isRequired
+  city: PropTypes.object.isRequired
 }
 
 export default ForecastExtended
